@@ -1,0 +1,25 @@
+/* 페이지 브레이크 제어 유틸리티 클래스 */
+
+/* 요소가 페이지 경계에서 잘리지 않도록 */
+.page-break-avoid {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* 기본값 - 잘려도 됨 */
+.page-break-auto {
+  break-inside: auto;
+  page-break-inside: auto;
+}
+
+/* 요소 앞에서 새 페이지 시작 */
+.page-break-before {
+  break-before: page;
+  page-break-before: always;
+}
+
+/* 요소 뒤에서 새 페이지 시작 */
+.page-break-after {
+  break-after: page;
+  page-break-after: always;
+}
