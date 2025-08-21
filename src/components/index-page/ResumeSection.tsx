@@ -1,7 +1,7 @@
 import SectionTitle from "./SectionTitle";
 import ResumeLink from "./ResumeLink";
 
-interface ResumeItem {
+interface LinkItem {
   href: string;
   title: string;
   description: string;
@@ -9,7 +9,7 @@ interface ResumeItem {
 
 interface ResumeSectionProps {
   title: string;
-  items: ResumeItem[];
+  items: LinkItem[];
   variant?: "default" | "highlighted";
 }
 
