@@ -1,11 +1,19 @@
-import { Period, BulletList, Heading1, Heading2, Heading3, Heading4, Text } from "../components";
+import {
+  Period,
+  BulletList,
+  Heading1,
+  Heading2,
+  Heading3,
+  Heading4,
+  Text,
+} from "@components";
 
 const Career = () => {
   return (
     <div className="max-w-[210mm] min-h-[297mm] mx-auto my-8 px-[20mm] py-[25mm] bg-white shadow-lg leading-relaxed print:max-w-none print:m-0 print:shadow-none print:page-break-inside-avoid">
       <Heading1>양명규</Heading1>
 
-      <Heading2 variant="section">경력 기술서</Heading2>
+      <Heading2>경력 기술서</Heading2>
 
       <section>
         <Heading3>주식회사위븐 (2022.09 - 2024.03)</Heading3>
@@ -13,7 +21,7 @@ const Career = () => {
         <div className="mt-6">
           <Heading4>웹사이트 에디터 개발 프로젝트</Heading4>
 
-          <Period>2022. 09. ~ 2024. 03.</Period>
+          <Period startDate="202209" endDate="202403" />
           <Text variant="caption" className="mt-2">
             사용성이 떨어지는 레거시 PPT 스타일 에디터를 현대적인 인터페이스로
             개선
@@ -30,12 +38,16 @@ const Career = () => {
               className="text-gray-700 text-sm mt-2"
             />
 
-            <Text variant="label" className="mt-4">사용 기술:</Text>
+            <Text variant="label" className="mt-4">
+              사용 기술:
+            </Text>
             <Text className="mt-1">
               Vanilla JavaScript, HTML5, CSS3, DOM API, 모듈 패턴
             </Text>
 
-            <Text variant="label" className="mt-4">성과:</Text>
+            <Text variant="label" className="mt-4">
+              성과:
+            </Text>
             <BulletList
               items={[
                 "메모리 사용량 절감으로 브라우저 안정성 확보",
@@ -49,7 +61,7 @@ const Career = () => {
         <div className="mt-8">
           <Heading4>쇼핑몰 AI 제작 서비스 개발 프로젝트</Heading4>
 
-          <Period>2023. 06. ~ 2024. 03.</Period>
+          <Period startDate="202306" endDate="202403" />
           <Text variant="caption" className="mt-2">
             사용자 벤치마킹 사이트 분석 기반 맞춤형 쇼핑몰 자동 생성 시스템 구축
           </Text>
@@ -65,12 +77,16 @@ const Career = () => {
               className="text-gray-700 text-sm mt-2"
             />
 
-            <Text variant="label" className="mt-4">사용 기술:</Text>
+            <Text variant="label" className="mt-4">
+              사용 기술:
+            </Text>
             <Text className="mt-1">
               JavaScript, HTML5, CSS3, iframe API, Chart.js
             </Text>
 
-            <Text variant="label" className="mt-4">성과:</Text>
+            <Text variant="label" className="mt-4">
+              성과:
+            </Text>
             <BulletList
               items={[
                 "디자인 요소 추출 정확도 85% 달성으로 AI 추천 품질 향상",
@@ -84,16 +100,12 @@ const Career = () => {
       </section>
 
       <section>
-        <Heading3>
-          주식회사더스토리뱅크 (2021.02 - 2022.07)
-        </Heading3>
+        <Heading3>주식회사더스토리뱅크 (2021.02 - 2022.07)</Heading3>
 
         <div className="mt-6">
-          <Heading4>
-            WIZWARE 그룹웨어 플러그인 개발 프로젝트
-          </Heading4>
+          <Heading4>WIZWARE 그룹웨어 플러그인 개발 프로젝트</Heading4>
 
-          <Period>2022. 03. ~ 2022. 07.</Period>
+          <Period startDate="202203" endDate="202207" />
           <Text variant="caption" className="mt-2">
             확장 가능한 모듈식 그룹웨어 시스템 설계 및 구현
           </Text>
@@ -108,12 +120,16 @@ const Career = () => {
               className="text-gray-700 text-sm mt-2"
             />
 
-            <Text variant="label" className="mt-4">사용 기술:</Text>
+            <Text variant="label" className="mt-4">
+              사용 기술:
+            </Text>
             <Text className="mt-1">
               JavaScript, HTML5, CSS3, 모듈 패턴, MVC 아키텍처
             </Text>
 
-            <Text variant="label" className="mt-4">성과:</Text>
+            <Text variant="label" className="mt-4">
+              성과:
+            </Text>
             <BulletList
               items={[
                 "모듈화된 아키텍처로 버그 대응 시간 단축",
@@ -130,7 +146,7 @@ const Career = () => {
             WEVEN 웹사이트 빌더 서비스 개발 프로젝트
           </h4>
 
-          <Period>2021. 02. ~ 2021. 09.</Period>
+          <Period startDate="202102" endDate="202109" />
           <p className="text-gray-600 text-sm italic mt-2">
             확장 가능하고 유지보수가 용이한 템플릿 관리 시스템 개발
           </p>
@@ -146,12 +162,16 @@ const Career = () => {
               className="text-gray-700 text-sm mt-2"
             />
 
-            <Text variant="label" className="mt-4">사용 기술:</Text>
+            <Text variant="label" className="mt-4">
+              사용 기술:
+            </Text>
             <p className="text-gray-700 text-sm mt-1">
               JavaScript, HTML5, CSS3, 템플릿 엔진, 브라우저 캐싱 API
             </p>
 
-            <Text variant="label" className="mt-4">성과:</Text>
+            <Text variant="label" className="mt-4">
+              성과:
+            </Text>
             <BulletList
               items={[
                 "50여 종의 테마 템플릿과 300여 개 블록 템플릿 효율적 관리 시스템 구축",
@@ -167,7 +187,7 @@ const Career = () => {
             2021 하인슈타인 올림피아드 행사 사이트 개발 프로젝트
           </h4>
 
-          <Period>2021. 08. ~ 2021. 09.</Period>
+          <Period startDate="202108" endDate="202109" />
           <p className="text-gray-600 text-sm italic mt-2">
             짧은 개발 기간 내 3천명 규모 행사를 위한 안정적인 사이트 구축
           </p>
@@ -181,12 +201,16 @@ const Career = () => {
               className="text-gray-700 text-sm mt-2"
             />
 
-            <Text variant="label" className="mt-4">사용 기술:</Text>
+            <Text variant="label" className="mt-4">
+              사용 기술:
+            </Text>
             <p className="text-gray-700 text-sm mt-1">
               JavaScript, HTML5, CSS3, SVG, GSAP
             </p>
 
-            <Text variant="label" className="mt-4">성과:</Text>
+            <Text variant="label" className="mt-4">
+              성과:
+            </Text>
             <BulletList
               items={["성공적인 행사 운영으로 클라이언트 만족도 달성"]}
               className="text-gray-700 text-sm mt-2"
@@ -201,7 +225,7 @@ const Career = () => {
         <div className="mt-6">
           <h4 className="text-xl font-bold">공공기관 LMS 구축 프로젝트</h4>
 
-          <Period>2020. 10. ~ 2020. 11.</Period>
+          <Period startDate="202010" endDate="202011" />
           <p className="text-gray-600 text-sm italic mt-2">
             웹 표준을 준수하며 다양한 브라우저와 장치에서 접근 가능한 LMS 구축
           </p>
@@ -217,12 +241,16 @@ const Career = () => {
               className="text-gray-700 text-sm mt-2"
             />
 
-            <Text variant="label" className="mt-4">사용 기술:</Text>
+            <Text variant="label" className="mt-4">
+              사용 기술:
+            </Text>
             <p className="text-gray-700 text-sm mt-1">
               JavaScript, HTML5, CSS3, ARIA, 웹 접근성
             </p>
 
-            <Text variant="label" className="mt-4">성과:</Text>
+            <Text variant="label" className="mt-4">
+              성과:
+            </Text>
             <BulletList
               items={[
                 "장애인 사용자 접근성 개선으로 공공기관 시스템 요구사항 충족",

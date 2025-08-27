@@ -8,7 +8,7 @@ import {
   Heading3,
   Period,
   TechStackSection,
-} from "../components";
+} from "@components";
 
 const ResumeWithCareer = () => {
   return (
@@ -33,7 +33,7 @@ const ResumeWithCareer = () => {
         className="text-gray-700 text-base mt-5"
       />
 
-      <Heading2 variant="section">경력</Heading2>
+      <Heading2>경력</Heading2>
 
       <CompanySection
         company="주식회사위븐"
@@ -91,7 +91,7 @@ const ResumeWithCareer = () => {
         </AchievementBox>
       </CompanySection>
 
-      <Heading2 variant="section">기술 스택</Heading2>
+      <Heading2>기술 스택</Heading2>
 
       <div className="mt-8">
         <TechStackSection
@@ -119,20 +119,20 @@ const ResumeWithCareer = () => {
         <TechStackSection category="CI/CD" technologies="Github Actions" />
       </div>
 
-      <Heading2 variant="section">학력</Heading2>
+      <Heading2>학력</Heading2>
 
       <section className="">
         <Heading3>숭실대학교 컴퓨터학부 학사</Heading3>
 
-        <Period>2015. 03. ~ 2021. 02.</Period>
+        <Period startDate="201503" endDate="202102" />
       </section>
 
-      <Heading2 variant="section">교육</Heading2>
+      <Heading2>교육</Heading2>
 
       <section className="">
         <Heading3>패스트캠퍼스 데브캠프 프론트엔드 2기</Heading3>
 
-        <Period>2024. 10. ~ 2025. 04. (6개월)</Period>
+        <Period startDate="202410" endDate="202504" showDuration />
 
         <BulletList
           items={[
@@ -144,12 +144,12 @@ const ResumeWithCareer = () => {
         />
       </section>
 
-      <Heading2 variant="section">수상 및 기타</Heading2>
+      <Heading2>수상 및 기타</Heading2>
 
       <section className="">
         <Heading3>AI-JAM KOREA 2020 동상 수상</Heading3>
 
-        <Period>2020. 08.</Period>
+        <Period startDate="202008" />
 
         <p className="text-gray-700 text-sm mt-2">
           NLP 기반 감정 분석 및 마인드 케어 어플리케이션 개발
@@ -196,7 +196,7 @@ const ResumeWithCareer = () => {
           React 기반 이커머스 플랫폼 (팀 프로젝트)
         </h3>
 
-        <Period>2025. 02. ~ 2025. 04.</Period>
+        <Period startDate="202502" endDate="202504" />
         <p className="text-gray-700 text-sm mt-2">
           기술 스택: TypeScript, React, Next.js, 상태관리 라이브러리
         </p>
@@ -208,7 +208,7 @@ const ResumeWithCareer = () => {
       <section className="">
         <h3 className="text-xl font-bold">인트라넷 인사관리 시스템</h3>
 
-        <Period>2024. 12. ~ 2025. 01.</Period>
+        <Period startDate="202412" endDate="202501" />
         <p className="text-gray-700 text-sm mt-2">
           기술 스택: React, TypeScript
         </p>
@@ -220,14 +220,14 @@ const ResumeWithCareer = () => {
       <section className="">
         <h3 className="text-xl font-bold">영상 공유 SNS</h3>
 
-        <Period>2025. 01. ~ 2025. 02.</Period>
+        <Period startDate="202501" endDate="202502" />
         <p className="text-gray-700 text-sm mt-2">기술 스택: React, Next.js</p>
         <p className="text-gray-700 text-sm mt-1">
           설명: 영상 업로드, 공유, 소셜 기능을 포함한 SNS 플랫폼
         </p>
       </section>
 
-      <Heading2 variant="section">경력 기술서</Heading2>
+      <Heading2>경력 기술서</Heading2>
 
       <section className="">
         <Heading3>주식회사위븐 (2022.09 - 2024.03)</Heading3>
@@ -235,7 +235,7 @@ const ResumeWithCareer = () => {
         <div className="mt-6">
           <h4 className="text-xl font-bold">웹사이트 에디터 개발 프로젝트</h4>
 
-          <Period>2022. 09. ~ 2024. 03.</Period>
+          <Period startDate="202209" endDate="202403" />
           <p className="text-gray-600 text-sm italic mt-2">
             사용성이 떨어지는 레거시 PPT 스타일 에디터를 현대적인 인터페이스로
             개선
@@ -269,9 +269,11 @@ const ResumeWithCareer = () => {
         </div>
 
         <div className="mt-8">
-          <h4 className="text-xl font-bold">쇼핑몰 AI 제작 서비스 개발 프로젝트</h4>
+          <h4 className="text-xl font-bold">
+            쇼핑몰 AI 제작 서비스 개발 프로젝트
+          </h4>
 
-          <Period>2023. 06. ~ 2024. 03.</Period>
+          <Period startDate="202306" endDate="202403" />
           <p className="text-gray-600 text-sm italic mt-2">
             사용자 벤치마킹 사이트 분석 기반 맞춤형 쇼핑몰 자동 생성 시스템 구축
           </p>
@@ -313,7 +315,7 @@ const ResumeWithCareer = () => {
             WIZWARE 그룹웨어 플러그인 개발 프로젝트
           </h4>
 
-          <Period>2022. 03. ~ 2022. 07.</Period>
+          <Period startDate="202203" endDate="202207" />
           <p className="text-gray-600 text-sm italic mt-2">
             확장 가능한 모듈식 그룹웨어 시스템 설계 및 구현
           </p>
@@ -350,7 +352,7 @@ const ResumeWithCareer = () => {
             WEVEN 웹사이트 빌더 서비스 개발 프로젝트
           </h4>
 
-          <Period>2021. 02. ~ 2021. 09.</Period>
+          <Period startDate="202102" endDate="202109" />
           <p className="text-gray-600 text-sm italic mt-2">
             확장 가능하고 유지보수가 용이한 템플릿 관리 시스템 개발
           </p>
@@ -387,7 +389,7 @@ const ResumeWithCareer = () => {
             2021 하인슈타인 올림피아드 행사 사이트 개발 프로젝트
           </h4>
 
-          <Period>2021. 08. ~ 2021. 09.</Period>
+          <Period startDate="202108" endDate="202109" />
           <p className="text-gray-600 text-sm italic mt-2">
             짧은 개발 기간 내 3천명 규모 행사를 위한 안정적인 사이트 구축
           </p>
@@ -421,7 +423,7 @@ const ResumeWithCareer = () => {
         <div className="mt-6">
           <h4 className="text-xl font-bold">공공기관 LMS 구축 프로젝트</h4>
 
-          <Period>2020. 10. ~ 2020. 11.</Period>
+          <Period startDate="202010" endDate="202011" />
           <p className="text-gray-600 text-sm italic mt-2">
             웹 표준을 준수하며 다양한 브라우저와 장치에서 접근 가능한 LMS 구축
           </p>

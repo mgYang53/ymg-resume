@@ -9,13 +9,6 @@ export default function IndexPage() {
         subtitle="다양한 포지션과 상황에 맞춘 여러 버전의 이력서를 확인해보세요."
       />
 
-      <ResumeSection
-        title="포트폴리오 & 기본 이력서"
-        items={routeConfig.portfolio}
-      />
-
-      <ResumeSection title="경력별 맞춤 이력서" items={routeConfig.career} />
-
       <ResumeSection title="개인 맞춤형 이력서" items={routeConfig.personal} />
 
       <ResumeSection
@@ -23,6 +16,13 @@ export default function IndexPage() {
         items={routeConfig.detailed}
         variant="highlighted"
       />
+
+      <ResumeSection
+        title="포트폴리오 & 기본 이력서"
+        items={routeConfig.portfolio}
+      />
+
+      <ResumeSection title="경력별 맞춤 이력서" items={routeConfig.career} />
     </div>
   );
 }
