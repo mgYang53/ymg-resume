@@ -6,12 +6,7 @@ import ResumeExample from "./resume_example.mdx";
 import SuperrookieExample from "./superrookie_example.mdx";
 import { Career, ResumeWithCareer, ResumeWithCareer2 } from "./career";
 import { Portfolio } from "./portfolio";
-import {
-  ResumeStar,
-  ResumeYmg1,
-  ResumeYmg2,
-  ResumeYmgFormatted,
-} from "./resume";
+import { ResumeStar, ResumeClassic } from "./resume";
 
 // 경로 상수
 const PATHS = {
@@ -21,10 +16,7 @@ const PATHS = {
   NEWBIE: "/newbie",
   SUPERROOKIE: "/superrookie",
   RESUME_STAR: "/resume-star",
-  RESUME_STAR2: "/resume-star2",
-  RESUME_YMG_1: "/resume-ymg-1",
-  RESUME_YMG_2: "/resume-ymg-2",
-  RESUME_YMG_FORMATTED: "/resume-ymg-formatted",
+  RESUME_CLASSIC: "/resume-classic",
   CAREER: "/career",
   RESUME_CAREER: "/resume-career",
   RESUME_CAREER2: "/resume-career2",
@@ -57,19 +49,9 @@ export const routeConfig = {
       description: "기술적 도전과 성과 중심 버전",
     },
     {
-      href: PATHS.RESUME_YMG_1,
-      title: "YMG 버전 1",
-      description: "첫 번째 개인 맞춤 버전",
-    },
-    {
-      href: PATHS.RESUME_YMG_2,
-      title: "YMG 버전 2",
-      description: "두 번째 개인 맞춤 버전",
-    },
-    {
-      href: PATHS.RESUME_YMG_FORMATTED,
-      title: "YMG 포맷버전",
-      description: "포맷팅 강화 버전",
+      href: PATHS.RESUME_CLASSIC,
+      title: "이력서 250821 버전",
+      description: "모든 내용 포함한 이력서 예시",
     },
   ],
   detailed: [
@@ -96,9 +78,7 @@ const routeComponentMap = {
   [PATHS.NEWBIE]: <ResumeExample />,
   [PATHS.SUPERROOKIE]: <SuperrookieExample />,
   [PATHS.RESUME_STAR]: <ResumeStar />,
-  [PATHS.RESUME_YMG_1]: <ResumeYmg1 />,
-  [PATHS.RESUME_YMG_2]: <ResumeYmg2 />,
-  [PATHS.RESUME_YMG_FORMATTED]: <ResumeYmgFormatted />,
+  [PATHS.RESUME_CLASSIC]: <ResumeClassic />,
   [PATHS.CAREER]: <Career />,
   [PATHS.RESUME_CAREER]: <ResumeWithCareer />,
   [PATHS.RESUME_CAREER2]: <ResumeWithCareer2 />,

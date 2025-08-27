@@ -22,7 +22,9 @@ export default function SimpleProjectSection({
     <div className="space-y-2">
       <TitleWithPeriod title={title} period={period} />
 
-      {techStack && <Text className="text-gray-700">기술 스택: {techStack}</Text>}
+      {techStack && (
+        <Text className="text-gray-700">기술 스택: {techStack}</Text>
+      )}
 
       {challenge && <LabelText label="기술적 도전">{challenge}</LabelText>}
 
