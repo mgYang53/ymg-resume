@@ -25,7 +25,7 @@ const ResumeClassic = () => {
         github="https://github.com/mgYang53"
       />
 
-      <BulletList
+      {/* <BulletList
         items={[
           "Vanilla JavaScript 기반 웹 애플리케이션 설계 및 개발",
           "모듈 패턴 및 DOM 조작 최적화를 통한 애플리케이션 성능 개선",
@@ -33,7 +33,7 @@ const ResumeClassic = () => {
           "드래그 앤 드롭 인터페이스 구현 및 WYSIWYG 에디터 개발 전문성",
         ]}
         className="text-gray-700 text-base mt-5"
-      />
+      /> */}
 
       <Spacer size="xl" />
 
@@ -196,10 +196,8 @@ const ResumeClassic = () => {
 
           <BulletList
             items={[
-              "React, Next.js, TypeScript 기반 프론트엔드 개발 학습",
-              "팀 프로젝트 경험 (3명~10명 규모, 총 3개 프로젝트)",
-              "TanStack Query, Zustand, Redux Toolkit 등 상태 관리 라이브러리 학습",
-              "Git Flow, 코드 리뷰, Atomic Design 등 협업 프로세스 경험",
+              "React, Next.js, TypeScript, Redux Toolkit 등 프론트엔드 개발 학습",
+              "기업 연계 및 토이 프로젝트 경험 (3명~10명 규모, 총 3개 프로젝트)",
             ]}
             className="text-gray-700 text-base mt-4"
           />
@@ -217,7 +215,6 @@ const ResumeClassic = () => {
               "컴포넌트 라이브러리 설계 및 모노레포 구조 학습",
               "MVP 개발 프로세스 경험: 서비스 기획 분석 → 핵심 기능 선택 → 구현",
               "실무 중심 서비스 확장 및 유지보수 경험 (3주 MVP + 5주 고도화)",
-              "협업을 통한 코드 리뷰 및 설계 개선 프로세스 학습",
             ]}
             className="text-gray-700 text-base mt-4"
           />
@@ -246,11 +243,11 @@ const ResumeClassic = () => {
       <section className="space-y-3">
         <TechStackSection
           category="언어/프레임워크"
-          technologies="JavaScript, TypeScript, React, Next.js, PHP, Jquery"
+          technologies="JavaScript, TypeScript, React, Next.js"
         />
         <TechStackSection
           category="상태관리"
-          technologies="Tanstack Query, Redux Toolkit, Zustand"
+          technologies="TanStack Query, Redux Toolkit, Zustand"
         />
         <TechStackSection
           category="스타일링"
@@ -265,10 +262,6 @@ const ResumeClassic = () => {
           technologies="Yarn, npm, pnpm"
         />
         <TechStackSection category="CI/CD" technologies="Github Actions" />
-        <TechStackSection
-          category="DB/백엔드 Saas"
-          technologies="MySQL, Prisma, Supabase, Firebase"
-        />
       </section>
 
       <Spacer size="xl" />
@@ -307,54 +300,41 @@ const ResumeClassic = () => {
 
       <section className="space-y-8">
         <SimpleProjectSection
-          title="DIBTP - 디지털 중고거래 경매 플랫폼"
+          title="DDIP(띱!) - 지역 기반 중고거래 하향식 경매 플랫폼"
           startDate="2025-06"
           endDate="2025-08"
-          techStack="Next.js 15, React 19, TypeScript, Prisma, PostgreSQL, Turborepo"
+          techStack="Next.js, TypeScript, TanStack Query, Supabase, Turborepo"
           description={[
-            "하향식 경매 시스템 구현 (30분 주기 가격 하락 + 즉시 입찰)",
-            "모노레포 구조로 30+ 재사용 컴포넌트 라이브러리 구축",
-            "Supabase Realtime 활용 실시간 채팅 및 PWA 최적화",
-            "CI/CD 파이프라인 구축으로 배포 시간 90% 단축 (30분 → 3분)",
+            "30분 주기 하향식 가격 조정으로 기존 중고거래 가격 협상 비효율성 해결",
+            "실시간 지역화 서비스: Supabase Realtime 채팅 + Kakao Map API 연동 + PWA 최적화",
+            "Turborepo 기반 디자인 시스템 구축으로 UI 개발 효율성 극대화",
+            "GitHub Actions 기반 3단계 CI/CD 파이프라인 구축 (자동 릴리즈·Storybook 배포·Vercel 연동)",
           ]}
         />
 
         <SimpleProjectSection
-          title="UIverse - 전자상거래 플랫폼"
+          title="Ora(오라) - 개인화 전자상거래 플랫폼"
           startDate="2025-03"
           endDate="2025-04"
-          techStack="Next.js 15, React 18, TypeScript, TanStack Query, Zustand"
+          techStack="Next.js, TypeScript, TanStack Query, Zustand, Tailwind CSS"
           description={[
             "기업 연계 프로젝트 - Frontend 3명, Backend 5명, UX/UI 2명",
-            "상품 검색/필터링, 리뷰 시스템, 사용자 분석 기능 구현",
-            "Atomic Design 기반 재사용 컴포넌트 라이브러리 구축",
-            "완성도 높은 전자상거래 서비스 배포 및 팀 프로젝트 성공 완수",
+            "TanStack Query 기반 서버 상태 캐싱 및 클라이언트 Hydration 최적화",
+            "상품 검색/필터링, 리뷰 시스템, 사용자 행동 분석 기능 구현",
+            "Atomic Design & shadcn/ui 기반 재사용 컴포넌트 구축",
           ]}
         />
 
         <SimpleProjectSection
-          title="펫 소셜 미디어 플랫폼"
+          title="PetMoment(펫모먼트) - 펫 영상 공유 SNS"
           startDate="2024-12"
           endDate="2025-02"
-          techStack="React 18, TypeScript, Firebase, TanStack Query, Zustand"
+          techStack="React, TypeScript, Firebase, TanStack Query, Zustand"
           description={[
-            "플레이리스트 기반 영상 관리 및 실시간 소셜 기능 구현",
-            "YouTube/Vimeo API 연동 영상 정보 자동 수집 시스템 개발",
-            "Firebase 기반 댓글, 좋아요, 북마크, 팔로우 시스템 구축",
-            "TanStack Query 도입으로 API 호출 50% 감소",
-          ]}
-        />
-
-        <SimpleProjectSection
-          title="GoodWork - 급여 및 일정 관리 플랫폼"
-          startDate="2024-11"
-          endDate="2024-12"
-          techStack="React 18, TypeScript, Redux Toolkit, Styled Components, Firebase"
-          description={[
-            "일정 관리 캘린더 UI 및 CRUD 기능 구현",
-            "Redux Toolkit 기반 중앙 집중식 상태 관리",
-            "39개 재사용 가능한 컴포넌트 아키텍처 설계",
-            "3인 팀에서 프론트엔드 개발 리드 역할 수행",
+            "플레이리스트 중심의 영상 관리 시스템 및 소셜 기능 (좋아요/북마크/댓글/팔로우) 개발",
+            "React Player 활용 YouTube 영상 통합 및 자동재생 시스템 개발",
+            "Google OAuth & Firebase Firestore 기반 사용자 인증 및 데이터 관리 구현",
+            "TanStack Query와 Zustand를 활용한 서버/클라이언트 상태 분리 및 성능 최적화",
           ]}
         />
       </section>
