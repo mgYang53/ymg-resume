@@ -1,3 +1,4 @@
+import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 // 컴포넌트 파일들 import
@@ -7,93 +8,113 @@ import SuperrookieExample from "./superrookie_example.mdx";
 import { Career, ResumeWithCareer, ResumeWithCareer2 } from "./career";
 import { Portfolio } from "./portfolio";
 import { ResumeStar, ResumeClassic } from "./resume";
+import { NaverCloudResume } from "./history";
 
-// 경로 상수
-const PATHS = {
-  HOME: "/",
-  PORTFOLIO: "/portfolio",
-  RESUME: "/resume",
-  NEWBIE: "/newbie",
-  SUPERROOKIE: "/superrookie",
-  RESUME_STAR: "/resume-star",
-  RESUME_CLASSIC: "/resume-classic",
-  CAREER: "/career",
-  RESUME_CAREER: "/resume-career",
-  RESUME_CAREER2: "/resume-career2",
+type Category = "portfolio" | "career" | "personal" | "detailed" | "history";
+interface MetaData {
+  title?: string;
+  description?: string;
+  category?: Category;
+}
+
+export interface RouteDefinition extends MetaData {
+  path: string;
+  component: React.ReactElement;
+}
+
+export type LinkItem = Omit<RouteDefinition, "category" | "component">;
+
+const ROUTE_DEFINITIONS: Record<string, RouteDefinition> = {
+  HOME: { path: "/", component: <IndexPage /> },
+  RESUME_INDEX: { path: "/resume", component: <ResumeExample /> },
+  PORTFOLIO: {
+    path: "/portfolio",
+    component: <Portfolio />,
+    title: "포트폴리오",
+    description: "메인 포트폴리오 이력서",
+    category: "portfolio",
+  },
+  NEWBIE: {
+    path: "/newbie",
+    component: <ResumeExample />,
+    title: "신입 개발자용",
+    description: "신입 개발자 포지션 지원용",
+    category: "career",
+  },
+  SUPERROOKIE: {
+    path: "/superrookie",
+    component: <SuperrookieExample />,
+    title: "슈퍼루키용",
+    description: "경력 1-2년 개발자용",
+    category: "career",
+  },
+  RESUME_STAR: {
+    path: "/resume-star",
+    component: <ResumeStar />,
+    title: "이력서 STAR 적용 버전",
+    description: "기술적 도전과 성과 중심 버전",
+    category: "personal",
+  },
+  RESUME_CLASSIC: {
+    path: "/resume-classic",
+    component: <ResumeClassic />,
+    title: "이력서 250821 버전",
+    description: "모든 내용 포함한 이력서 예시",
+    category: "personal",
+  },
+  CAREER: {
+    path: "/career",
+    component: <Career />,
+    title: "경력기술서",
+    description: "경력기술서만 따로",
+    category: "detailed",
+  },
+  RESUME_CAREER: {
+    path: "/resume-career",
+    component: <ResumeWithCareer />,
+    title: "이력서 + 경력기술서",
+    description: "기본 이력서 + 경력기술서",
+    category: "detailed",
+  },
+  RESUME_CAREER2: {
+    path: "/resume-career2",
+    component: <ResumeWithCareer2 />,
+    title: "이력서 + 경력기술서2",
+    description: "기본 이력서 + 경력기술서2",
+    category: "detailed",
+  },
+  NAVER_CLOUD: {
+    path: "/naver-cloud",
+    component: <NaverCloudResume />,
+    title: "네이버 클라우드 지원 이력서",
+    description: "Papago AI FE 개발(경력), 25.09.03",
+    category: "history",
+  },
 } as const;
 
-export const routeConfig = {
-  portfolio: [
-    {
-      href: PATHS.PORTFOLIO,
-      title: "포트폴리오",
-      description: "메인 포트폴리오 이력서",
-    },
-  ],
-  career: [
-    {
-      href: PATHS.NEWBIE,
-      title: "신입 개발자용",
-      description: "신입 개발자 포지션 지원용",
-    },
-    {
-      href: PATHS.SUPERROOKIE,
-      title: "슈퍼루키용",
-      description: "경력 1-2년 개발자용",
-    },
-  ],
-  personal: [
-    {
-      href: PATHS.RESUME_STAR,
-      title: "이력서 STAR 적용 버전",
-      description: "기술적 도전과 성과 중심 버전",
-    },
-    {
-      href: PATHS.RESUME_CLASSIC,
-      title: "이력서 250821 버전",
-      description: "모든 내용 포함한 이력서 예시",
-    },
-  ],
-  detailed: [
-    {
-      href: PATHS.CAREER,
-      title: "경력기술서",
-      description: "경력기술서만 따로",
-    },
-    {
-      href: PATHS.RESUME_CAREER,
-      title: "이력서 + 경력기술서",
-      description: "기본 이력서 + 경력기술서",
-    },
-    {
-      href: PATHS.RESUME_CAREER2,
-      title: "이력서 + 경력기술서2",
-      description: "기본 이력서 + 경력기술서2",
-    },
-  ],
-};
+// 카테고리별로 라우트를 그룹화하는 함수
+const getMetaDataByCategory = (category: Category): LinkItem[] =>
+  Object.values(ROUTE_DEFINITIONS)
+    .filter(
+      (route) => route.category === category && route.title && route.description
+    )
+    .map((route) => ({
+      path: route.path,
+      title: route.title!,
+      description: route.description!,
+    }));
 
-const routeComponentMap = {
-  [PATHS.PORTFOLIO]: <Portfolio />,
-  [PATHS.NEWBIE]: <ResumeExample />,
-  [PATHS.SUPERROOKIE]: <SuperrookieExample />,
-  [PATHS.RESUME_STAR]: <ResumeStar />,
-  [PATHS.RESUME_CLASSIC]: <ResumeClassic />,
-  [PATHS.CAREER]: <Career />,
-  [PATHS.RESUME_CAREER]: <ResumeWithCareer />,
-  [PATHS.RESUME_CAREER2]: <ResumeWithCareer2 />,
-};
+export const LINK_ITEMS: Record<Category, LinkItem[]> = {
+  portfolio: getMetaDataByCategory("portfolio"),
+  career: getMetaDataByCategory("career"),
+  personal: getMetaDataByCategory("personal"),
+  detailed: getMetaDataByCategory("detailed"),
+  history: getMetaDataByCategory("history"),
+} as const;
 
-const getAllPaths = () =>
-  Object.values(routeConfig)
-    .flat()
-    .map((item) => item.href);
-
-export const router = createBrowserRouter([
-  { path: PATHS.HOME, element: <IndexPage /> },
-  { path: PATHS.RESUME, element: <ResumeExample /> },
-  ...getAllPaths().map((path) => ({
+export const router = createBrowserRouter(
+  Object.values(ROUTE_DEFINITIONS).map(({ path, component }) => ({
     path,
-    element: routeComponentMap[path as keyof typeof routeComponentMap],
-  })),
-]);
+    element: component,
+  }))
+);
