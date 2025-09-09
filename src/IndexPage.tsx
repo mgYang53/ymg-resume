@@ -1,7 +1,15 @@
+import { useState, useEffect } from "react";
 import { PageHeader, ResumeSection } from "./components";
-import { routeConfig } from "./routes";
+import { LINK_ITEMS, LinkItem } from "./routes";
+import { getHistoryItems } from "./utils";
 
 export default function IndexPage() {
+  const [historyItems, setHistoryItems] = useState<Array<LinkItem>>([]);
+
+  useEffect(() => {
+    getHistoryItems().then(setHistoryItems);
+  }, []);
+
   return (
     <div className="max-w-4xl mx-auto py-16 px-8 space-y-12">
       <PageHeader
@@ -9,20 +17,24 @@ export default function IndexPage() {
         subtitle="다양한 포지션과 상황에 맞춘 여러 버전의 이력서를 확인해보세요."
       />
 
-      <ResumeSection title="개인 맞춤형 이력서" items={routeConfig.personal} />
+      <ResumeSection title="개인 맞춤형 이력서" items={LINK_ITEMS.personal} />
+
+      {historyItems.length > 0 && (
+        <ResumeSection title="제출한 이력서" items={historyItems} />
+      )}
 
       <ResumeSection
         title="이력서 + 경력기술서"
-        items={routeConfig.detailed}
+        items={LINK_ITEMS.detailed}
         variant="highlighted"
       />
 
       <ResumeSection
         title="포트폴리오 & 기본 이력서"
-        items={routeConfig.portfolio}
+        items={LINK_ITEMS.portfolio}
       />
 
-      <ResumeSection title="경력별 맞춤 이력서" items={routeConfig.career} />
+      <ResumeSection title="경력별 맞춤 이력서" items={LINK_ITEMS.career} />
     </div>
   );
 }
