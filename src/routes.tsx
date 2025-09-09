@@ -8,9 +8,8 @@ import SuperrookieExample from "./superrookie_example.mdx";
 import { Career, ResumeWithCareer, ResumeWithCareer2 } from "./career";
 import { Portfolio } from "./portfolio";
 import { ResumeStar, ResumeClassic } from "./resume";
-import { NaverCloudResume } from "./history";
 
-type Category = "portfolio" | "career" | "personal" | "detailed" | "history";
+type Category = "portfolio" | "career" | "personal" | "detailed";
 interface MetaData {
   title?: string;
   description?: string;
@@ -83,17 +82,10 @@ const ROUTE_DEFINITIONS: Record<string, RouteDefinition> = {
     description: "기본 이력서 + 경력기술서2",
     category: "detailed",
   },
-  NAVER_CLOUD: {
-    path: "/naver-cloud",
-    component: <NaverCloudResume />,
-    title: "네이버 클라우드 지원 이력서",
-    description: "Papago AI FE 개발(경력), 25.09.03",
-    category: "history",
-  },
 } as const;
 
 // 카테고리별로 라우트를 그룹화하는 함수
-const getMetaDataByCategory = (category: Category): LinkItem[] =>
+const getLinkItemByCategory = (category: Category): LinkItem[] =>
   Object.values(ROUTE_DEFINITIONS)
     .filter(
       (route) => route.category === category && route.title && route.description
@@ -105,11 +97,10 @@ const getMetaDataByCategory = (category: Category): LinkItem[] =>
     }));
 
 export const LINK_ITEMS: Record<Category, LinkItem[]> = {
-  portfolio: getMetaDataByCategory("portfolio"),
-  career: getMetaDataByCategory("career"),
-  personal: getMetaDataByCategory("personal"),
-  detailed: getMetaDataByCategory("detailed"),
-  history: getMetaDataByCategory("history"),
+  portfolio: getLinkItemByCategory("portfolio"),
+  career: getLinkItemByCategory("career"),
+  personal: getLinkItemByCategory("personal"),
+  detailed: getLinkItemByCategory("detailed"),
 } as const;
 
 export const router = createBrowserRouter(
