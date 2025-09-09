@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { PageHeader, ResumeSection } from "./components";
-import { LINK_ITEMS, LinkItem } from "./routes";
+import { LINK_ITEMS, type LinkItem } from "./routes";
 import { getHistoryItems } from "./utils";
 
 export default function IndexPage() {
