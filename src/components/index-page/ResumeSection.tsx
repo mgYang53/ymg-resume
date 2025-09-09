@@ -1,11 +1,6 @@
 import SectionTitle from "./SectionTitle";
 import ResumeLink from "./ResumeLink";
-
-interface LinkItem {
-  href: string;
-  title: string;
-  description: string;
-}
+import { type LinkItem } from "@/routes";
 
 interface ResumeSectionProps {
   title: string;
@@ -30,7 +25,7 @@ export default function ResumeSection({
         {items.map((item, index) => (
           <ResumeLink
             key={index}
-            href={item.href}
+            path={item.path}
             title={item.title}
             description={item.description}
             variant={variant}
