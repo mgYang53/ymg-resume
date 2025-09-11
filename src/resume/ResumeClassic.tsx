@@ -9,6 +9,7 @@ import {
   SimpleProjectSection,
   Spacer,
   TechStackSection,
+  Text,
   TitleWithPeriod,
 } from "@components";
 
@@ -16,15 +17,47 @@ const ResumeClassic = () => {
   return (
     <ResumeContainer>
       <Heading1>양명규</Heading1>
-
       <Spacer />
-
       <ContactInfo
         email="mg960503@gmail.com"
         phone="010-8510-5739"
         github="https://github.com/mgYang53"
       />
-
+      <Text variant="body" className="mt-4">
+        <div className="mb-1">
+          웹 빌더와 AI 기반 쇼핑몰 제작 서비스를 개발하며{" "}
+          <span className="font-semibold">
+            누구나 쉽게 웹사이트를 만들 수 있는 경험
+          </span>
+          을 만들어왔습니다.
+        </div>
+        <div className="mb-1">
+          특히{" "}
+          <span className="font-semibold">
+            AI 분석 과정 시각화 기능과 WYSIWYG 에디터 개발·운영
+          </span>
+          을 통해, 복잡한 사이트 제작 과정을 단순화하고 다양한 수준의 사용자가
+          원하는 결과물을 빠르게 구현할 수 있도록 지원했습니다.
+        </div>
+        <div className="mb-1">
+          그리고 레거시 환경의 한계를 개선하기 위해 모던 프론트엔드 스택을
+          학습·적용하며{" "}
+          <span className="font-semibold">
+            디자인 시스템을 통한 일관된 UI/UX, 퍼포먼스 최적화
+          </span>{" "}
+          등을 꾸준히 고민해왔습니다.
+        </div>
+        <div className="mb-1">
+          최근에는{" "}
+          <span className="font-semibold">AI 도구를 적극 활용하여</span>{" "}
+          생산성과 효율성을 높이고, 빠른 이터레이션과 DX 향상에 관심을 가지고
+          있습니다.
+        </div>
+        <div>
+          끊임없이 고민하고 배우며, 동료와 함께 더 나은 사용자 경험을
+          만들어가겠습니다.
+        </div>
+      </Text>
       {/* <BulletList
         items={[
           "Vanilla JavaScript 기반 웹 애플리케이션 설계 및 개발",
@@ -34,11 +67,8 @@ const ResumeClassic = () => {
         ]}
         className="text-gray-700 text-base mt-5"
       /> */}
-
       <Spacer size="xl" />
-
       <Heading2 className="mb-6">경력</Heading2>
-
       <section className="space-y-12">
         <CompanySection
           company="주식회사위븐"
@@ -105,7 +135,7 @@ const ResumeClassic = () => {
                 "서비스 내 그룹웨어 기능을 플러그인 형태로 설계 및 개발하여 시스템 유연성 확보",
                 "조직도, 인사정보, 근태관리 등 핵심 그룹웨어 기능을 독립적인 모듈로 분리 개발",
                 "플러그인 간 통신 인터페이스 표준화로 시스템 안정성 확보",
-                "결과적으로 모듈화된 아키텍처로 버그 대응 시간 70% 단축, 새로운 기능 개발 주기 50% 단축, 그룹웨어 플러그인의 성공적인 개발 및 사내 인트라넷 시스템 적용을 달성했습니다.",
+                "결과적으로 모듈화된 아키텍처로 버그 대응 시간 70% 단축, 새로운 기능 개발 주기 50% 단축, 그룹웨어 플러그인의 성공적인 개발 및 사내 인트라넷 시스템 적용",
               ]}
             />
 
@@ -168,11 +198,8 @@ const ResumeClassic = () => {
           />
         </CompanySection>
       </section>
-
       <Spacer size="xl" />
-
       <Heading2 className="mb-6">학력</Heading2>
-
       <section>
         <TitleWithPeriod
           title="숭실대학교 컴퓨터학부 학사"
@@ -180,11 +207,8 @@ const ResumeClassic = () => {
           endDate="2021-02"
         />
       </section>
-
       <Spacer size="xl" />
-
       <Heading2 className="mb-6">교육</Heading2>
-
       <section className="space-y-12">
         <div>
           <TitleWithPeriod
@@ -235,11 +259,8 @@ const ResumeClassic = () => {
           />
         </div>
       </section>
-
       <Spacer size="xl" />
-
       <Heading2 className="mb-6">기술 스택</Heading2>
-
       <section className="space-y-3">
         <TechStackSection
           category="언어/프레임워크"
@@ -263,11 +284,8 @@ const ResumeClassic = () => {
         />
         <TechStackSection category="CI/CD" technologies="Github Actions" />
       </section>
-
       <Spacer size="xl" />
-
       <Heading2 className="mb-6">기타</Heading2>
-
       <section className="space-y-6">
         <div>
           <TitleWithPeriod
@@ -295,9 +313,7 @@ const ResumeClassic = () => {
         </div>
       </section>
       <Spacer size="xl" />
-
       <Heading2 className="mb-6">주요 프로젝트</Heading2>
-
       <section className="space-y-8">
         <SimpleProjectSection
           title="DDIP(띱!) - 지역 기반 중고거래 하향식 경매 플랫폼"
