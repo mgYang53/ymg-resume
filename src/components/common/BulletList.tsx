@@ -5,13 +5,10 @@ interface BulletListProps {
 
 export default function BulletList({ items, className = "" }: BulletListProps) {
   return (
-    <ul className={`${className}`}>
+    <ul className={`list-disc list-outside space-y-1 ml-6 pl-1 ${className}`}>
       {items.map((item, index) => (
-        <li
-          key={index}
-          className="my-1 ml-2 relative before:content-[''] before:inline-block before:w-1 before:h-1 before:rounded-full before:bg-gray-600 before:absolute before:top-2.5"
-        >
-          <p className="pl-3">{item}</p>
+        <li key={index} className="text-gray-800">
+          {item}
         </li>
       ))}
     </ul>

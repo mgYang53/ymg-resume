@@ -1,4 +1,4 @@
-import { Heading3, Text } from "../common";
+import { Heading4, Text } from "../common";
 
 interface TechStackSectionProps {
   category: string;
@@ -16,8 +16,8 @@ export default function TechStackSection({
     : technologies;
 
   return (
-    <div className={className}>
-      <Heading3>{category}</Heading3>
+    <div className={`flex gap-2 ${className}`}>
+      <Heading4>{category}:</Heading4>
       <Text className="mt-0.5">{techText}</Text>
     </div>
   );

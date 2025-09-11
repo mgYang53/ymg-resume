@@ -20,7 +20,7 @@ export default function MinifiedStarSection({
   actionAndResult,
 }: MinifiedStarSectionProps) {
   return (
-    <div>
+    <div className="pl-3">
       <Heading4>{title}</Heading4>
       {(period || startDate) && (
         <Period

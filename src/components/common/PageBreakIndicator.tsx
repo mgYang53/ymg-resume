@@ -6,7 +6,7 @@ export default function PageBreakIndicator({
   pageNumber,
 }: PageBreakIndicatorProps) {
   // CSS mm 단위를 직접 사용하여 브라우저가 정확히 계산하도록 함
-  const topOffsetMm = pageNumber * 297 - 10;
+  const topOffsetMm = pageNumber * 297;
 
   return (
     <div
