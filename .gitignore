@@ -63,5 +63,5 @@ CLAUDE.md
 #mentoring
 mentoring*
 
-# Personal history files
-src/history/
+# Personal documents
+*.md
