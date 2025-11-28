@@ -8,7 +8,6 @@ import SuperrookieExample from "./superrookie_example.mdx";
 import { Career, ResumeWithCareer, ResumeWithCareer2 } from "./career";
 import { Portfolio } from "./portfolio";
 import { ResumeStar, ResumeClassic } from "./resume";
-import { HistoryLazyLoader } from "./components";
 
 type Category = "portfolio" | "career" | "personal" | "detailed";
 interface MetaData {
@@ -110,9 +109,4 @@ export const router = createBrowserRouter([
     path,
     element: component,
   })),
-  // History 라우트들을 위한 catch-all
-  {
-    path: "*",
-    element: <HistoryLazyLoader />,
-  },
 ]);

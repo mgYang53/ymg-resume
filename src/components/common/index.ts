@@ -11,4 +11,3 @@ export { default as Period } from "./Period";
 export { default as ResumeContainer } from "./ResumeContainer";
 export { default as Spacer } from "./Spacer";
 export { default as Text } from "./Text";
-export { default as HistoryLazyLoader } from "./HistoryLazyLoader";

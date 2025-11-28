@@ -1,15 +1,7 @@
-import { useState, useEffect } from "react";
 import { PageHeader, ResumeSection } from "./components";
-import { LINK_ITEMS, type LinkItem } from "./routes";
-import { getHistoryItems } from "./utils";
+import { LINK_ITEMS } from "./routes";
 
 export default function IndexPage() {
-  const [historyItems, setHistoryItems] = useState<Array<LinkItem>>([]);
-
-  useEffect(() => {
-    getHistoryItems().then(setHistoryItems);
-  }, []);
-
   return (
     <div className="max-w-4xl mx-auto py-16 px-8 space-y-12">
       <PageHeader
@@ -18,10 +10,6 @@ export default function IndexPage() {
       />
 
       <ResumeSection title="개인 맞춤형 이력서" items={LINK_ITEMS.personal} />
-
-      {historyItems.length > 0 && (
-        <ResumeSection title="제출한 이력서" items={historyItems} />
-      )}
 
       <ResumeSection
         title="이력서 + 경력기술서"
